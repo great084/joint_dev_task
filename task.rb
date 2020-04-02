@@ -64,6 +64,7 @@ def q6
   
   # mapメソッドで書き換え
   numbers2 = numbers1.map{ |n| n*10 }
+  # numbers2 = numbers1.map{&:*10}
   p numbers2
 
 end
@@ -72,12 +73,14 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
+  # eachメソッドでの記載
   # array.each_index do |i|
   #   array[i] = array[i].to_i
   # end
   
   # mapメソッドで書き換え
-  array.map!{ |c| c.to_i }
+  # array.map!{ |c| c.to_i }
+  array.map!(&:to_i)
   # 以下は変更しないで下さい
   p array
 end
