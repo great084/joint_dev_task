@@ -174,6 +174,9 @@ def q16
   ]
 
   # 以下に回答を記載
+  users.map{ |hash|
+    puts "私の名前は#{hash[:name]}です。年齢は#{hash[:age]}歳です。"
+  }
 
 end
 
