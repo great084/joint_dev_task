@@ -183,10 +183,12 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  def initialize(attributes={})
-    @name = attributes[:name]
-    @age =  attributes[:age]
-    @gender = attributes[:gender]
+  # def initialize(attributes={})
+  def initialize(**arg) #オプション引数
+    #p arg
+    @name = arg[:name]
+    @age =  arg[:age]
+    @gender = arg[:gender]
   end
   
   def info
@@ -209,13 +211,13 @@ end
 
 class UserQ18
   # 以下に回答を記載
-  def initialize(attributes={})
+  def initialize(**attributes) #オプション引数
     @name = attributes[:name]
     @age =  attributes[:age]
   end
   
   def introduce
-    puts @age < 15? "こんにちは，#{@name}と申します。宜しくお願いいたします。"
+    @age > 15? "こんにちは，#{@name}と申します。宜しくお願いいたします。"
                   : "はいさいまいど〜，#{@name}です！！！"
   end
 
@@ -232,10 +234,10 @@ end
 
 class Item
   # 以下を修正して下さい
-  attr_accessor :name
+  attr_reader :name
 
-  def initialize(item)
-    @name = item[:name]
+  def initialize(name:) #キーワード引数
+    @name = name
   end
 end
 
